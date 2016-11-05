@@ -6,11 +6,15 @@
 
 import Koa from 'koa';
 
-import logger from './middlewares/logger';
+import koaBunyanLogger from 'koa-bunyan-logger';
 
 const app = new Koa();
 
-app.use(logger());
+app.use(koaBunyanLogger());
+app.use(async (ctx, next) => {
+    ctx.log.info(`Got a request form ${ctx.request.ip} for ${ctx.path}`);
+    await next();
+});
 
 // response
 app.use(async (ctx, next) => {

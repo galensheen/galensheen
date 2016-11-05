@@ -24,10 +24,14 @@
   "homepage": "https://github.com/galensheen/galensheen#readme",
   "dependencies": {
     "babel-core": "^6.18.2",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-register": "^6.18.0",
     "koa": "^2.0.0-alpha.7",
+    "koa-bunyan-logger": "^1.3.0",
+    "koa-compose": "^2.5.1",
+    "koa-convert": "^1.2.0",
     "moment": "^2.15.2",
     "typescript": "^2.0.7"
   },
