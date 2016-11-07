@@ -7,4 +7,4 @@ module.exports = function (router, app) {
     router.prefix('/code');
 
     router.get('/rxjs');
-}
+};

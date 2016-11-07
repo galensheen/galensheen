@@ -1,10 +1,11 @@
 {
   "name": "galensheen",
   "version": "1.0.0",
-  "description": "Galen's library",
+  "description": "My home for love",
   "main": "app.js",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"node server\"",
+    "test": "mocha ./server/**/*.test.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
@@ -25,6 +26,7 @@
   "dependencies": {
     "co": "^4.6.0",
     "debug": "^2.2.0",
+    "extend": "^3.0.0",
     "globby": "^6.1.0",
     "is-type-of": "^1.0.0",
     "koa": "^2.0.0-alpha.7",
@@ -43,7 +45,9 @@
     "typescript": "^2.0.7"
   },
   "devDependencies": {
-    "jspm": "^0.16.47"
+    "chai": "^3.5.0",
+    "jspm": "^0.16.47",
+    "mocha": "^3.1.2"
   },
   "jspm": {
     "directories": {
