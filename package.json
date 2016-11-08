@@ -40,12 +40,15 @@
     "koa-router": "^7.0.1",
     "koa-static2": "^0.1.8",
     "koa-views": "^5.1.2",
+    "methods": "^1.1.2",
     "moment": "^2.15.2",
     "runkoa": "^1.5.6",
-    "typescript": "^2.0.7"
+    "typescript": "^2.0.7",
+    "utility": "^1.8.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "inflection": "^1.10.0",
     "jspm": "^0.16.47",
     "mocha": "^3.1.2"
   },

@@ -66,6 +66,7 @@ module.exports = function loading(files, options) {
             if (options.call && is.function(exports) && !is.class(exports)) {
                 result = exports.apply(null, [].concat(options.inject));
             }
+
             result = options.resultHandler(result, file, dir, exports);
             results.push(result);
 
