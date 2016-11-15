@@ -4,7 +4,7 @@
 
 import path from 'path';
 import assert from 'assert';
-
+import livereload from 'koa-livereload';
 import Debug from 'debug';
 import * as me from '../utils';
 
@@ -40,6 +40,13 @@ export default function (config = {}) {
             middlewares.push(action);
         }
     }
+
+    // dev环境需要单独配置的中间件
+    // console.log('------------------------: ', config.env);
+    // if (config.env === 'dev') {
+    //     middlewares.unshift(livereload());
+    // }
+
 
     debug(`=============== loading middleware: end ===============`);
     return middlewares;

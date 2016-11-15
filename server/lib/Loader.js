@@ -3,8 +3,6 @@
  */
 
 import path from 'path';
-import extend from 'extend';
-
 const pkg = require('../../package.json');
 import loaderConfig from './memo-config';
 import loaderMdw from './memo-middleware';
