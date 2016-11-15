@@ -1,14 +1,7 @@
 /**
- * Created by galen on 16/11/5.
+ * Created by galen on 16/11/9.
  */
-'use strict';
 
-require('babel-core/register')({
-    'presets': [
-        'es2015',
-        'stage-0'
-    ]
-});
-require('babel-polyfill');
+const path = require('path');
 
-require('./server/app');
+require('runkoa')(path.resolve(__dirname, './server'));

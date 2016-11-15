@@ -4,18 +4,19 @@
  */
 'use strict';
 
-
-module.exports = function dev() {
+/**
+ *
+ * @param {Object} appInfo - app基本信息
+ */
+export default function dev(appInfo) {
 
     return {
 
         env: 'dev',
 
-        livereload: true,
-
         // 日志配置
-        log: {
-            level: 'debug'
+        logger: {
+            name: appInfo.name
         },
 
         redis: {

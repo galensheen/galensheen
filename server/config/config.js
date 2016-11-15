@@ -2,20 +2,22 @@
  * 默认配置
  * Created by galen on 16/11/7.
  */
-'use strict';
 
-const pkg = require('../../package.json');
+import path from 'path';
 
-module.exports = function init() {
+/**
+ * @param {Object} appInfo - app基本信息
+ */
+export default function init(appInfo) {
 
     return {
 
         // app基本信息
         app: {
-            name: pkg.name,
-            description: pkg.description,
-            version: pkg.version,
-            keywords: pkg.keywords ? pkg.keywords.join(',') : ''
+            name: appInfo.name,
+            description: appInfo.description,
+            version: appInfo.version,
+            keywords: appInfo.keywords
         },
 
         // 启动端口
@@ -29,16 +31,44 @@ module.exports = function init() {
 
         // 启用的中间件
         middlewares: [
-            'auth',
-            'logger'
+            'logger',
+            'bodyparser',
+            'json',
+            'static',
+            'views',
+            'context'
         ],
 
-        // bodyparser 配置
+        // ============= 中间件的配置 ============
+        // logger中间件配置
+        logger: {
+            name: appInfo.name
+        },
+        // bodyparser中间件配置
         bodyparser: {
-            encoding: 'utf8',
-            formLimit: '100kb',
-            jsonLimit: '100kb'
+            formLimit: '200kb',
+            jsonLimit: '2mb',
+            textLimit: '2mb',
+            strict: false
+        },
+        // json中间件配置
+        json: {
+            pretty: false,
+            param: 'pretty'
+        },
+        // static中间件，同一个中间件使用多次，使用数组配置
+        static: [
+            {route: 'public', path: path.join(appInfo.appDir, 'public')}
+        ],
+        // views中间件
+        views: {
+            root: path.join(appInfo.appDir, 'server/views'),
+            options: {
+                map: {
+                    'server.html': 'handlebars'
+                },
+                extension: 'server.html'
+            }
         }
-
     }
 };

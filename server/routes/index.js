@@ -1,16 +1,11 @@
 /**
- * Created by galen on 16/11/6.
+ * Created by galen on 16/11/9.
  */
 
-const router = require('koa-router')();
 
-router.get('/', async function (ctx, next) {
-    "use strict";
-    ctx.state = {
-        title: 'koa2 title'
-    };
+export default function (router, app) {
 
-    await ctx.render('index', {});
-});
-
-export default router;
+    //router.prefix('/rest/anchorman');
+    // 主播信息
+    router.get( '/', 'index.index');
+};
