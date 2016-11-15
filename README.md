@@ -1,2 +1,2 @@
 # galensheen
-Problems are not stop signs, they are guidelines.
+Problems are not stop signs, they are guidelines...
