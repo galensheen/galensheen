@@ -1,15 +1,14 @@
 {
-  "name": "memo",
+  "name": "galensheen",
   "version": "0.0.1",
-  "description": "A framework based on Koa2 with common middlewares",
+  "description": "galensheen's home",
   "main": "app.js",
   "scripts": {
-    "start": "DEBUG=memo:* node app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "DEBUG=memo:* node app"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/galensheen/memo.git"
+    "url": "git+https://github.com/galensheen/galensheen.git"
   },
   "keywords": [
     "koa2",
@@ -20,9 +19,9 @@
   "author": "galensheen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/galensheen/memo/issues"
+    "url": "https://github.com/galensheen/galensheen/issues"
   },
-  "homepage": "https://github.com/galensheen/memo#readme",
+  "homepage": "https://github.com/galensheen/galensheen#readme",
   "dependencies": {
     "babel-core": "^6.18.2",
     "babel-plugin-add-module-exports": "^0.2.1",
