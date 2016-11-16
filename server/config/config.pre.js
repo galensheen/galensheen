@@ -6,25 +6,16 @@
 
 
 /**
- * @param {Object} appInfo - app基本信息
+ * pre环境配置
  */
-export default function pre(appInfo) {
+export default function pre(appDir) {
 
     return {
 
         env: 'pre',
 
-        // 日志配置
-        logger: {
-            name: appInfo.name,
-            streams: [{
-                level: 'warn',
-                type: 'rotating-file',
-                period: '1d',
-                count: 10,
-                path: appInfo.appDir + '/logs/warn.log',
-            }]
-        },
+        // 启动端口
+        port: process.env.PORT || 3000,
 
         redis: {
             db: 1

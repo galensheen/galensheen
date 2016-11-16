@@ -53,7 +53,9 @@ const REST_MAP = {
     }
 };
 
-
+/**
+ * 扩展koa-router
+ */
 export default class Router extends KoaRouter {
 
     constructor(options) {

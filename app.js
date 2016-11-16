@@ -4,4 +4,5 @@
 
 const path = require('path');
 
-require('runkoa')(path.resolve(__dirname, './server'));
+//require('runkoa')(path.resolve(__dirname, './server'));
+require('runkoa')(path.resolve(__dirname, './server/memo.js'));

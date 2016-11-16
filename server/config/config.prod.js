@@ -7,26 +7,20 @@
 import path from 'path';
 
 /**
- *
- * @param {Object} appInfo - app基本信息
+ * prod环境配置
  */
-export default function prod(appInfo) {
+export default function prod(appDir) {
 
     return {
 
+        app: {
+            logo: '===='
+        },
+
         env: 'prod',
 
-        // 日志配置
-        logger: {
-            name: appInfo.name,
-            streams: [{
-                level: 'error',
-                type: 'rotating-file',
-                period: '1d',
-                count: 10,
-                path: appInfo.appDir + '/logs/error.log',
-            }]
-        },
+        // 启动端口
+        port: process.env.PORT || 80,
 
         redis: {
             db: 1
@@ -35,19 +29,6 @@ export default function prod(appInfo) {
         mysql: {
             username: 'prod',
             password: 'prod-password'
-        },
-
-
-        // views中间件
-        views: {
-            root: path.join(appInfo.appDir, 'server/views'),
-            options: {
-                map: {
-                    'server.html': 'dot'
-                },
-                extension: 'server.html',
-                cache: true
-            }
         }
     }
 };

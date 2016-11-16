@@ -5,19 +5,16 @@
 'use strict';
 
 /**
- *
- * @param {Object} appInfo - app基本信息
+ * dev环境配置
  */
-export default function dev(appInfo) {
+export default function dev(appDir) {
 
     return {
 
         env: 'dev',
 
-        // 日志配置
-        logger: {
-            name: appInfo.name
-        },
+        // 启动端口
+        port: process.env.PORT || 3000,
 
         redis: {
             db: 1
