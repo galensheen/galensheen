@@ -52,5 +52,6 @@
     "util": "^0.10.3",
     "utility": "^1.8.0",
     "uuid": "^2.0.3"
-  }
+  },
+  "devDependencies": {}
 }
